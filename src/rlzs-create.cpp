@@ -38,6 +38,8 @@ int main(int argc, const char* argv[])
                              .build_or_load(col);
 
         verify_index(col, rlz_store);
+        benchmark_text_decoding(rlz_store);
+    
     }
 
     return EXIT_SUCCESS;
