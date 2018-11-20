@@ -246,6 +246,7 @@ void output_encoding_stats(collection& col, std::vector<factorization_info>& efs
     LOG(INFO) << "=====================================================================";
     LOG(INFO) << "text size          = " << text_size_bytes << " bytes (" << text_size_bytes / (1024 * 1024.0) << " MB)";
     LOG(INFO) << "encoding size      = " << nb << " bytes (" << nb / (1024 * 1024.0) << " MB)";
+    std::cerr << "Compression ratio :  " << (nb*1.0)/(text_size_bytes*1.0) << std::endl;
     LOG(INFO) << "compression ratio  = " << 100.0 * (((double)nb / (double)text_size_bytes)) << " %";
     LOG(INFO) << "space savings      = " << 100.0 * (1 - ((double)nb / (double)text_size_bytes)) << " %";
     LOG(INFO) << "number of factors  = " << num_factors;

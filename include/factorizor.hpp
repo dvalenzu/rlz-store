@@ -172,6 +172,7 @@ struct factorizor {
             auto stop_fact = hrclock::now();
             auto fact_seconds = duration_cast<milliseconds>(stop_fact - start_fact).count() / 1000.0;
             LOG(INFO) << "Factorization time = " << fact_seconds << " sec";
+            std::cerr << "Final Wtime(s)    : " << fact_seconds << std::endl;
             LOG(INFO) << "Factorization speed = " << text_size_mb / fact_seconds << " MB/s";
             LOG(INFO) << "Factorize done. (" << type() << ")";
         }

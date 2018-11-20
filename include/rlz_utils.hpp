@@ -59,7 +59,7 @@ void benchmark_text_decoding(const t_idx& idx)
     }
     auto text_seconds = duration_cast<milliseconds>(stop - start).count() / 1000.0;
     LOG(INFO) << "num syms = " << num_syms;
-    LOG(INFO) << "total time = " << text_seconds << " sec";
+    std::cerr << "Decompression t(s)    : " << text_seconds << std::endl;
     auto text_size_mb = num_syms / (1024 * 1024);
     LOG(INFO) << "decoding speed = " << text_size_mb / text_seconds << " MB/s";
     auto num_blocks = num_syms / t_idx::block_size;
